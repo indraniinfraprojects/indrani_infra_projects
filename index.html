@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Indrani Infra Projects | Construction | Electricals | Elevators | Interior Designing
+    </title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- EXTERNAL STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER / HOME ================= -->
+    <header id="home" class="header">
+        <!-- PARTICLES -->
+        <div class="particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo-box">
+            <img src="image.png" alt="Indrani Infra Projects Logo" class="logo">
+            <h1 class="brand-name">Indrani Infra Projects</h1>
+            <p class="brand-tagline">
+                Construction • Electricals • Elevators • Interior Designing
+            </p>
+        </div>
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ================= PREMIUM VIDEO BANNER ================= -->
+    <section class="video-container">
+        <video id="promo-video" autoplay loop muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <button id="mute-btn" class="mute-button" aria-label="Unmute Video">🔇</button>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="section">
+        <h2 class="title">Our Services</h2>
+        <div class="grid">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Construction Planning</h3>
+                    <p>Modern house planning and architectural design solutions with premium quality execution.</p>
+                    <span class="card-highlight">WE BUILD YOUR DREAM HOME</span>
+                </div>
+                <a href="construction.html" class="card-btn">View Designs →</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">⚡</div>
+                    <h3>Electrical Works & Contractor</h3>
+                    <p>Complete residential, commercial, and industrial electrical solutions including BESCOM approvals and reliable power systems.</p>
+                </div>
+                <a href="electrical.html" class="card-btn">View Designs →</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">🪵</div>
+                    <h3>Interior Designing & Wood Works</h3>
+                    <p>Elegant interior spaces crafted with premium custom woodwork, luxury aesthetics, and spatial harmony.</p>
+                </div>
+                <a href="interior.html" class="card-btn">View Designs →</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">🛗</div>
+                    <h3>Lift Installation</h3>
+                    <p>Safe, smooth, and high-efficiency elevator installation and maintenance services for residential and commercial projects.</p>
+                </div>
+                <a href="elevator.html" class="card-btn">View Designs →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about">
+        <h2 class="title">About Us</h2>
+        <div class="about-container">
+            <p>
+                Indrani Infra Projects is a trusted infrastructure and interior solutions company delivering premium construction services, safe electrical systems, elegant interiors, and reliable elevator installations.
+            </p>
+            <p>
+                We focus on quality workmanship, modern design philosophy, rigorous safety standards, and flawless, timely project execution tailored to your specific aspirations.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section">
+        <h2 class="title">Contact Us</h2>
+        <div class="contact-box">
+            <p>📞 +91 9341906091</p>
+            <p>📞 +91 8088993444</p>
+            <p>💬 WhatsApp Available</p>
+
+            <p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sreevari.cei@gmail.com"
+                   target="_blank"
+                   class="email-center">
+                   sreevari.cei@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sunil.svelectricals@gmail.com"
+                    target="_blank"
+                    class="email-center">
+                    sunil.svelectricals@gmail.com
+                </a>
+            </p>
+
+            <p>📍 #31, SREE VARI MANSION, Near Ramada Resort, Honnenahalli, Yelahanka Bangalore 560064</p>
+        </div>
+    </section>
+
+    <!-- ================= WHATSAPP FLOATING BUTTON ================= -->
+    <a href="https://wa.me/919341906091?text=Hello%20Indrani%20Infra%20Projects%20Team,%20I%20am%20interested%20in%20your%20services." class="whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+        💬
+    </a>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© 2026 Indrani Infra Projects | All Rights Reserved</p>
+    </footer>
+
+    <!-- ================= VIDEO CONTROL SCRIPT ================= -->
+    <script>
+        const video = document.getElementById('promo-video');
+        const muteBtn = document.getElementById('mute-btn');
+
+        muteBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            toggleMute();
+        });
+
+        function toggleMute() {
+            if (video.muted) {
+                video.muted = false;
+                muteBtn.innerHTML = '🔊'; 
+                muteBtn.setAttribute('aria-label', 'Mute Video');
+            } else {
+                video.muted = true;
+                muteBtn.innerHTML = '🔇'; 
+                muteBtn.setAttribute('aria-label', 'Unmute Video');
+            }
+        }
+
+        document.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                muteBtn.innerHTML = '🔊';
+                muteBtn.setAttribute('aria-label', 'Mute Video');
+            }
+        }, { once: true });
+    </script>
+
+</body>
+</html>
