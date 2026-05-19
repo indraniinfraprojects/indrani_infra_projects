@@ -345,25 +345,30 @@ body{
     box-shadow: 0 8px 20px rgba(204, 164, 59, 0.3);
 }
 
-/* ================= STRICT COLLAGE / MASONRY GALLERY (DESKTOP FIRST) ================= */
-.gallery {
+/* ================= STRICT COLLAGE / MASONRY (Images & Videos) ================= */
+/* We apply the exact same logic to both .gallery and .video-grid so both become collages */
+.gallery,
+.video-grid {
+    display: block; /* CRITICAL: Must be block for columns to work */
     column-count: 3;
     column-gap: 25px;
     width: 100%;
     max-width: 1400px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 5%;
 }
 
 .gallery img,
-.gallery video {
+.gallery video,
+.video-grid img,
+.video-grid video {
     width: 100%;
     height: auto;
-    margin-bottom: 25px; /* Must match column-gap for equal spacing */
+    display: block; /* CRITICAL: Prevents awkward inline spacing */
+    margin-bottom: 25px; /* Must match column-gap */
     border-radius: 14px;
     box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    display: block; /* CRITICAL for desktop masonry */
-    -webkit-column-break-inside: avoid;
+    -webkit-column-break-inside: avoid; /* CRITICAL: Prevents cutting items in half */
     page-break-inside: avoid;
     break-inside: avoid;
     cursor: pointer;
@@ -371,34 +376,20 @@ body{
 }
 
 .gallery img:hover,
-.gallery video:hover {
+.gallery video:hover,
+.video-grid img:hover,
+.video-grid video:hover {
     transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(11, 60, 93, 0.2); 
     z-index: 2;
     position: relative;
 }
 
-/* ================= VIDEO GRID (Alternative Layout) ================= */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.video-grid video {
-    width: 100%;
-    border-radius: 14px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
-
-.video-grid video::-webkit-media-controls-volume-slider,
-.video-grid video::-webkit-media-controls-mute-button,
+/* Hide native controls if you want a clean look */
 .gallery video::-webkit-media-controls-volume-slider,
-.gallery video::-webkit-media-controls-mute-button {
+.gallery video::-webkit-media-controls-mute-button,
+.video-grid video::-webkit-media-controls-volume-slider,
+.video-grid video::-webkit-media-controls-mute-button {
     display: none !important;
 }
 
@@ -557,14 +548,17 @@ footer{
         height: 450px;
     }
 
-    /* Tablet Gallery Layout */
-    .gallery {
+    /* Tablet Gallery/Video Layout */
+    .gallery,
+    .video-grid {
         column-count: 2;
         column-gap: 20px;
     }
     
     .gallery img,
-    .gallery video {
+    .gallery video,
+    .video-grid img,
+    .video-grid video {
         margin-bottom: 20px;
     }
 }
@@ -642,15 +636,18 @@ footer{
         gap: 15px;
     }
 
-    /* Mobile Gallery Layout */
-    .gallery {
+    /* Mobile Gallery/Video Layout */
+    .gallery,
+    .video-grid {
         column-count: 1;
         column-gap: 15px;
-        padding: 0 10px;
+        padding: 0;
     }
     
     .gallery img,
-    .gallery video {
+    .gallery video,
+    .video-grid img,
+    .video-grid video {
         margin-bottom: 15px;
     }
 }
